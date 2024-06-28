@@ -1,0 +1,29 @@
+{
+  "name": "smartnest-api",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "postdeploy": "npx wrangler deploy",
+    "db:local": "npm run db:migrate && npm run db:up  && npm run db:generate",
+    "db:up": "drizzle-kit up --config=drizzle.config.ts",
+    "db:migrate": "npx wrangler d1 migrations apply smartnest-api --local",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:migrate:prod": "npx wrangler d1 migrations apply smartnest-api  --remote",
+    "db:drop": "drizzle-kit drop --out=drizzle"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "0.2.2",
+    "drizzle-orm": "0.31.2",
+    "hono": "4.4.9",
+    "uuid": "10.0.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20240620.0",
+    "@types/uuid": "10.0.0",
+    "drizzle-kit": "0.22.7",
+    "typescript": "5.5.2",
+    "wrangler": "3.57.2"
+  }
+}

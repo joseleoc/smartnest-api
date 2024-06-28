@@ -1,0 +1,24 @@
+name = "smartnest-api"
+compatibility_date = "2023-12-01"
+
+# [vars]
+# MY_VAR = "my-variable"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "smartnest-api"
+database_id = "7fb2df7e-af7e-427d-b91f-dd1e68cc317c"
+migrations_table = "d1_migrations"
+migrations_dir = "src/db/migrations"
+
+
+# [ai]
+# binding = "AI"
